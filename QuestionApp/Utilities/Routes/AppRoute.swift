@@ -15,14 +15,23 @@ final class AppRoute {
         self.window = UIWindow(frame: UIScreen.main.bounds)
     }
     
-    func start() {
+    func start(isFirstStart: Bool = true, networkService: NetworkServiceProtocol = NetworkService()) {
         let router = HomePageRouter()
-        let networkService = NetworkService()
+        let networkService = networkService
         let viewModel = HomePageViewModel(router: router, networkService: networkService)
         let viewController = HomePageController(viewModel: viewModel, nibName: "HomePageViewController")
-        self.window?.rootViewController = viewController
-        self.window?.makeKeyAndVisible()
+        let navgationController = UINavigationController(rootViewController: viewController)
+
+        if isFirstStart {
+            self.window?.rootViewController = navgationController
+            self.window?.makeKeyAndVisible()
+        } else {
+            UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromRight, animations: {
+                self.window?.rootViewController = navgationController
+            }, completion: nil)
+        }
     }
+
 }
 
 let app = AppContainer()

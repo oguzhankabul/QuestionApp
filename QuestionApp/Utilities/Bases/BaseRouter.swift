@@ -12,15 +12,15 @@ protocol RouterProtocol {
     associatedtype V: UIViewController
     var viewController: V? { get }
     
-    func open(_ viewController: UIViewController, transition: BaseTransition)
+    func open(_ viewController: UIViewController, transition: BaseTransitionProtocol)
 }
 
 class Router: RouterProtocol {
     
     weak var viewController: UIViewController?
-    var openTransition: BaseTransition?
+    var openTransition: BaseTransitionProtocol?
     
-    func open(_ viewController: UIViewController, transition: BaseTransition) {
+    func open(_ viewController: UIViewController, transition: BaseTransitionProtocol) {
         transition.viewController = self.viewController
         transition.open(viewController)
     }
@@ -34,8 +34,10 @@ class Router: RouterProtocol {
             assertionFailure("Nothing to close")
             return
         }
-        openTransition.isAnimated = animated
-        openTransition.completionHandler = completion
+        if let openTransition = openTransition as? PushTransition {
+            openTransition.isAnimated = animated
+            openTransition.completionHandler = completion
+        }
         openTransition.close(viewController)
     }
     

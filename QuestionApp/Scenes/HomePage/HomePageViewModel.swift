@@ -20,19 +20,30 @@ protocol HomePageViewModelProtocol: HomePageViewModelDataSource, HomePageViewMod
 
 final class HomePageViewModel: BaseViewModel<HomePageRouter>, HomePageViewModelProtocol {
     
-    var networkService: NetworkServiceProtocol
+    private var networkService: NetworkServiceProtocol
+    private var questions: QuestionList? = nil
     
     init(router: HomePageRouter, networkService: NetworkServiceProtocol) {
         self.networkService = networkService
         super.init(router: router)
+    }
+    
+    func getQuizList() {
         Task {
             do {
-                let a: QuestionList = try await networkService.request(endpoint: .getQuestions)
-                print(a)
+                questions = try await networkService.request(endpoint: .getQuestions)
+                guard let questions = questions else { return }
+                DispatchQueue.main.async {
+                       self.pushQuestionPage(questions: questions)
+                   }
             } catch {
                 print("Couldn't Question Response")
             }
         }
+    }
+    
+    private func pushQuestionPage(questions: QuestionList) {
+        router.pushQuestionPage(networkService: networkService, questions: questions)
 
     }
 }

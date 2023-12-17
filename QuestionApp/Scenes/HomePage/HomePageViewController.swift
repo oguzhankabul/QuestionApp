@@ -7,8 +7,9 @@
 
 import UIKit
 
-
 class HomePageController<V: HomePageViewModel>: UIViewController {
+    
+    @IBOutlet weak var startButton: UIButton!
     
     var viewModel: V
 
@@ -24,6 +25,14 @@ class HomePageController<V: HomePageViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startButton.state(isProgress: false, title: "START")
+    }
+    
+    @IBAction func startButtonAction(_ sender: UIButton) {
+        startButton.state(isProgress: true)
+        viewModel.getQuizList()
+    }
 }

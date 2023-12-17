@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class HomePageRouter: Router {
-    
+final class HomePageRouter: Router, HomePageRouter.Routes {
+    typealias Routes = QuestionPageRoute
 }
