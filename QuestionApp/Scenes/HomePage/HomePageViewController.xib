@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageController" customModule="QuestionApp" customModuleProvider="target">
             <connections>
+                <outlet property="highScoreLabel" destination="LkZ-zW-JA4" id="DpN-qU-NfL"/>
                 <outlet property="startButton" destination="tIE-eJ-wL1" id="Fra-iQ-7Fk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FLo-7W-55d"/>
             </connections>

@@ -106,7 +106,9 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
     
     func handleAnswerSelection(_ selectedButton: UIButton) {
         let selectedAnswer = selectedButton.titleLabel?.text
-        let correctAnswer = viewModel.questions[viewModel.currentQuestionNumber].correctAnswerText
+        guard let correctAnswer = viewModel.currentQuestion?.correctAnswerText else {
+            return
+        }
         if selectedAnswer == correctAnswer {
             selectedButton.layer.borderColor = UIColor.green.cgColor
         } else {

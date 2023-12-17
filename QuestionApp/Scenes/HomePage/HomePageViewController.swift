@@ -9,6 +9,7 @@ import UIKit
 
 class HomePageController<V: HomePageViewModel>: UIViewController {
     
+    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
     var viewModel: V
@@ -29,6 +30,7 @@ class HomePageController<V: HomePageViewModel>: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startButton.state(isProgress: false, title: "START")
+        highScoreLabel.text = viewModel.getHightScoreLabel()
     }
     
     @IBAction func startButtonAction(_ sender: UIButton) {

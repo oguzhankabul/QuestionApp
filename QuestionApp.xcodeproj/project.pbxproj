@@ -13,6 +13,7 @@
 		8444FB652B2F0F7A000A1EA4 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB642B2F0F7A000A1EA4 /* Array+Extensions.swift */; };
 		8444FB682B2F5ED5000A1EA4 /* QuestionPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB672B2F5ED5000A1EA4 /* QuestionPresentation.swift */; };
 		8444FB6B2B2F6BF8000A1EA4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8444FB6A2B2F6BF8000A1EA4 /* Kingfisher */; };
+		8444FB6D2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB6C2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift */; };
 		8496F0762B2CE81E00EAB8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0752B2CE81E00EAB8C3 /* AppDelegate.swift */; };
 		8496F07A2B2CE81E00EAB8C3 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0792B2CE81E00EAB8C3 /* HomePageViewController.swift */; };
 		8496F07F2B2CE81F00EAB8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496F07E2B2CE81F00EAB8C3 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		8444FB622B2EF48F000A1EA4 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		8444FB642B2F0F7A000A1EA4 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		8444FB672B2F5ED5000A1EA4 /* QuestionPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresentation.swift; sourceTree = "<group>"; };
+		8444FB6C2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		8496F0722B2CE81E00EAB8C3 /* QuestionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496F0752B2CE81E00EAB8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8496F0792B2CE81E00EAB8C3 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				8444FB622B2EF48F000A1EA4 /* UIButton+Extensions.swift */,
 				8444FB642B2F0F7A000A1EA4 /* Array+Extensions.swift */,
+				8444FB6C2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift */,
 			);
 			name = Extensions;
 			path = QuestionApp/Utilities/Extensions;
@@ -447,6 +450,7 @@
 				8496F0B32B2CEEFA00EAB8C3 /* BaseTransition.swift in Sources */,
 				84B651FA2B2DA29F00C6C63E /* AppRoute.swift in Sources */,
 				84B652002B2DA4FB00C6C63E /* APIEntpoint.swift in Sources */,
+				8444FB6D2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift in Sources */,
 				8496F0B72B2CF81A00EAB8C3 /* HomePageRouter.swift in Sources */,
 				84B652212B2E0A5100C6C63E /* QuestionPageViewModel.swift in Sources */,
 				84B652232B2E0A6100C6C63E /* QuestionPageRouter.swift in Sources */,

@@ -42,6 +42,10 @@ final class HomePageViewModel: BaseViewModel<HomePageRouter>, HomePageViewModelP
         }
     }
     
+    func getHightScoreLabel() -> String {
+        return "Highscore \(UserDefaults.getHighestScore()) points"
+    }
+    
     private func pushQuestionPage(questions: QuestionPresentation) {
         router.pushQuestionPage(networkService: networkService, questions: questions)
 

@@ -45,7 +45,6 @@ final class QuestionPageViewModel: BaseViewModel<QuestionPageRouter>, QuestionPa
     
     func answerQuestionAction(answer: String?) {
         guard let currentQuestion = currentQuestion else { return }
-
         if answer == currentQuestion.correctAnswerText {
             totalScore += currentQuestion.score
         }
@@ -53,10 +52,19 @@ final class QuestionPageViewModel: BaseViewModel<QuestionPageRouter>, QuestionPa
     
     func goToNextQuestion() {
         currentQuestionNumber += 1
+        if currentQuestion == nil {
+            checkAndSaveHighestScore()
+        }
         delegate?.questionDidChange(currentQuestion, totalScore: totalScore)
     }
     
     func pushHomePage() {
         router.pushHomePage(networkService: networkService)
+    }
+    
+    private func checkAndSaveHighestScore() {
+        if currentQuestionNumber >= questions.count {
+            UserDefaults.saveHighestScore(totalScore)
+        }
     }
 }
