@@ -37,5 +37,10 @@ extension UIButton {
             self.isEnabled = true
         }
     }
+    
+    func applyBorder(width: CGFloat, color: CGColor) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color
+    }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
-        
+    
     @IBOutlet weak var answerAndPointNumberInfoTitle: UILabel!
     @IBOutlet weak var questionPointLabel: UILabel!
     @IBOutlet weak var questionImageContainerView: UIView!
@@ -21,7 +21,12 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
     @IBOutlet weak var fourthOptionButton: UIButton!
     @IBOutlet weak var thirdOptionButton: UIButton!
     @IBOutlet weak var secondOptionButton: UIButton!
+    
     var viewModel: V
+    
+    private let borderWidth: CGFloat = 2
+    private let borderColorCorrect = UIColor.green.cgColor
+    private let borderColorIncorrect = UIColor.red.cgColor
     
     init(viewModel: V, nibName: String) {
         self.viewModel = viewModel
@@ -39,20 +44,25 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
     }
     
     @IBAction func firstOptionAction(_ sender: UIButton) {
-        viewModel.answerQuestionAction(answer: sender.titleLabel?.text)
+        handleAnswerSelection(sender)
     }
     
     @IBAction func secondOptionAction(_ sender: UIButton) {
-        viewModel.answerQuestionAction(answer: sender.titleLabel?.text)
+        handleAnswerSelection(sender)
     }
     
     @IBAction func thirdOptionAction(_ sender: UIButton) {
-        viewModel.answerQuestionAction(answer: sender.titleLabel?.text)
+        handleAnswerSelection(sender)
     }
     
     @IBAction func fourthOptionAction(_ sender: UIButton) {
-        viewModel.answerQuestionAction(answer: sender.titleLabel?.text)
+        handleAnswerSelection(sender)
     }
+    
+    @IBAction func homePageButtonAction(_ sender: UIButton) {
+        viewModel.pushHomePage()
+    }
+    
     
     func refreshUi(quesiton: QuestionDetail?, totalScore:Int) {
         guard let quesiton = quesiton else {
@@ -63,6 +73,7 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
         }
         
         refreshOptions()
+        resetOptionsBorders()
         questionPointLabel.text = "\(quesiton.score) puan"
         if let imageUrlString = quesiton.questionImageURL, imageUrlString != "null", !imageUrlString.isEmpty, let imageUrl = URL(string: imageUrlString) {
             questionImageContainerView.isHidden = false
@@ -93,8 +104,45 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
         
     }
     
-    @IBAction func homePageButtonAction(_ sender: UIButton) {
-        viewModel.pushHomePage()
+    func handleAnswerSelection(_ selectedButton: UIButton) {
+        let selectedAnswer = selectedButton.titleLabel?.text
+        let correctAnswer = viewModel.questions[viewModel.currentQuestionNumber].correctAnswerText
+        if selectedAnswer == correctAnswer {
+            selectedButton.layer.borderColor = UIColor.green.cgColor
+        } else {
+            selectedButton.layer.borderColor = UIColor.red.cgColor
+            highlightCorrectAnswer(correctAnswer)
+        }
+        selectedButton.layer.borderWidth = 2
+        setOptionsEnabled(false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.setOptionsEnabled(true)
+            self.viewModel.answerQuestionAction(answer: selectedAnswer)
+            self.viewModel.goToNextQuestion()
+        }
+    }
+    
+    func highlightCorrectAnswer(_ correctAnswer: String) {
+        let buttons = [firstOptionButton, secondOptionButton, thirdOptionButton, fourthOptionButton]
+        for button in buttons {
+            if button?.titleLabel?.text == correctAnswer {
+                button?.applyBorder(width: borderWidth, color: borderColorCorrect)
+            }
+        }
+    }
+    
+    func resetOptionsBorders() {
+        let buttons = [firstOptionButton, secondOptionButton, thirdOptionButton, fourthOptionButton]
+        for button in buttons {
+            button?.layer.borderWidth = 0
+        }
+    }
+    
+    func setOptionsEnabled(_ enabled: Bool) {
+        let buttons = [firstOptionButton, secondOptionButton, thirdOptionButton, fourthOptionButton]
+        for button in buttons {
+            button?.isEnabled = enabled
+        }
     }
 }
 

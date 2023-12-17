@@ -23,11 +23,15 @@ protocol QuestionPageViewModelDelegate: AnyObject {
 
 final class QuestionPageViewModel: BaseViewModel<QuestionPageRouter>, QuestionPageViewModelProtocol {
     
+    weak var delegate: QuestionPageViewModelDelegate?
     var networkService: NetworkServiceProtocol
     var questions: [QuestionDetail]
     var currentQuestionNumber = 0
     var totalScore = 0
-    weak var delegate: QuestionPageViewModelDelegate?
+    var currentQuestion: QuestionDetail? {
+        guard currentQuestionNumber < questions.count else { return nil }
+        return questions[currentQuestionNumber]
+    }
     
     init(router: QuestionPageRouter, networkService: NetworkServiceProtocol, questionPresentation: QuestionPresentation) {
         self.networkService = networkService
@@ -39,21 +43,17 @@ final class QuestionPageViewModel: BaseViewModel<QuestionPageRouter>, QuestionPa
         return questions[currentQuestionNumber].questionAnswers.shuffled()
     }
     
-    func answerQuestionAction (answer: String?) {
-       
-        
-        guard questions.count - 1 != currentQuestionNumber else {
-            delegate?.questionDidChange(nil, totalScore: totalScore)
-            return
-        }
-        
-        let currentQuestion = questions[currentQuestionNumber]
-        
+    func answerQuestionAction(answer: String?) {
+        guard let currentQuestion = currentQuestion else { return }
+
         if answer == currentQuestion.correctAnswerText {
             totalScore += currentQuestion.score
         }
+    }
+    
+    func goToNextQuestion() {
         currentQuestionNumber += 1
-        delegate?.questionDidChange(questions[currentQuestionNumber],totalScore: totalScore)
+        delegate?.questionDidChange(currentQuestion, totalScore: totalScore)
     }
     
     func pushHomePage() {
