@@ -15,11 +15,15 @@
 		8444FB6B2B2F6BF8000A1EA4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8444FB6A2B2F6BF8000A1EA4 /* Kingfisher */; };
 		8444FB6D2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB6C2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift */; };
 		8444FB6F2B2F93ED000A1EA4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB6E2B2F93ED000A1EA4 /* BaseNavigationController.swift */; };
+		8444FB722B2F98CC000A1EA4 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB712B2F98CC000A1EA4 /* MockNetworkService.swift */; };
+		8444FB752B2F99A7000A1EA4 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB742B2F99A7000A1EA4 /* TestError.swift */; };
+		8444FB772B2F9C61000A1EA4 /* MockQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8444FB762B2F9C61000A1EA4 /* MockQuestions.json */; };
+		8444FB792B2F9E95000A1EA4 /* QuestionPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444FB782B2F9E95000A1EA4 /* QuestionPageViewModelTests.swift */; };
 		8496F0762B2CE81E00EAB8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0752B2CE81E00EAB8C3 /* AppDelegate.swift */; };
 		8496F07A2B2CE81E00EAB8C3 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0792B2CE81E00EAB8C3 /* HomePageViewController.swift */; };
 		8496F07F2B2CE81F00EAB8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496F07E2B2CE81F00EAB8C3 /* Assets.xcassets */; };
 		8496F0822B2CE81F00EAB8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8496F0802B2CE81F00EAB8C3 /* LaunchScreen.storyboard */; };
-		8496F08D2B2CE81F00EAB8C3 /* QuestionAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F08C2B2CE81F00EAB8C3 /* QuestionAppTests.swift */; };
+		8496F08D2B2CE81F00EAB8C3 /* HomePageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F08C2B2CE81F00EAB8C3 /* HomePageViewModelTests.swift */; };
 		8496F0972B2CE81F00EAB8C3 /* QuestionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0962B2CE81F00EAB8C3 /* QuestionAppUITests.swift */; };
 		8496F0992B2CE81F00EAB8C3 /* QuestionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0982B2CE81F00EAB8C3 /* QuestionAppUITestsLaunchTests.swift */; };
 		8496F0AD2B2CEDD400EAB8C3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F0AC2B2CEDD400EAB8C3 /* BaseViewModel.swift */; };
@@ -65,6 +69,10 @@
 		8444FB672B2F5ED5000A1EA4 /* QuestionPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresentation.swift; sourceTree = "<group>"; };
 		8444FB6C2B2F8F65000A1EA4 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		8444FB6E2B2F93ED000A1EA4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		8444FB712B2F98CC000A1EA4 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		8444FB742B2F99A7000A1EA4 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		8444FB762B2F9C61000A1EA4 /* MockQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockQuestions.json; sourceTree = "<group>"; };
+		8444FB782B2F9E95000A1EA4 /* QuestionPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageViewModelTests.swift; sourceTree = "<group>"; };
 		8496F0722B2CE81E00EAB8C3 /* QuestionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496F0752B2CE81E00EAB8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8496F0792B2CE81E00EAB8C3 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +80,7 @@
 		8496F0812B2CE81F00EAB8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8496F0832B2CE81F00EAB8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8496F0882B2CE81F00EAB8C3 /* QuestionAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestionAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8496F08C2B2CE81F00EAB8C3 /* QuestionAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAppTests.swift; sourceTree = "<group>"; };
+		8496F08C2B2CE81F00EAB8C3 /* HomePageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModelTests.swift; sourceTree = "<group>"; };
 		8496F0922B2CE81F00EAB8C3 /* QuestionAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestionAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496F0962B2CE81F00EAB8C3 /* QuestionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAppUITests.swift; sourceTree = "<group>"; };
 		8496F0982B2CE81F00EAB8C3 /* QuestionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -139,6 +147,16 @@
 			path = Presentations;
 			sourceTree = "<group>";
 		};
+		8444FB702B2F98A4000A1EA4 /* MocksHelper */ = {
+			isa = PBXGroup;
+			children = (
+				8444FB712B2F98CC000A1EA4 /* MockNetworkService.swift */,
+				8444FB762B2F9C61000A1EA4 /* MockQuestions.json */,
+				8444FB742B2F99A7000A1EA4 /* TestError.swift */,
+			);
+			path = MocksHelper;
+			sourceTree = "<group>";
+		};
 		8496F0692B2CE81E00EAB8C3 = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +194,8 @@
 		8496F08B2B2CE81F00EAB8C3 /* QuestionAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				8496F08C2B2CE81F00EAB8C3 /* QuestionAppTests.swift */,
+				8496F08C2B2CE81F00EAB8C3 /* HomePageViewModelTests.swift */,
+				8444FB782B2F9E95000A1EA4 /* QuestionPageViewModelTests.swift */,
 			);
 			path = QuestionAppTests;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 		8496F0A62B2CED3800EAB8C3 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				8444FB702B2F98A4000A1EA4 /* MocksHelper */,
 				8444FB662B2F5EA1000A1EA4 /* Presentations */,
 				84B651FC2B2DA48C00C6C63E /* DTOs */,
 				84B651FB2B2DA48000C6C63E /* NetworkService */,
@@ -419,6 +439,7 @@
 				8496F0822B2CE81F00EAB8C3 /* LaunchScreen.storyboard in Resources */,
 				8496F07F2B2CE81F00EAB8C3 /* Assets.xcassets in Resources */,
 				8444FB5B2B2EE115000A1EA4 /* QuestionPageViewController.xib in Resources */,
+				8444FB772B2F9C61000A1EA4 /* MockQuestions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8444FB722B2F98CC000A1EA4 /* MockNetworkService.swift in Sources */,
 				8444FB6F2B2F93ED000A1EA4 /* BaseNavigationController.swift in Sources */,
 				84B652272B2E0AF300C6C63E /* QuestionPageRoute.swift in Sources */,
 				84B651FE2B2DA49E00C6C63E /* NetworkService.swift in Sources */,
@@ -458,6 +480,7 @@
 				8444FB652B2F0F7A000A1EA4 /* Array+Extensions.swift in Sources */,
 				84B652052B2DA93700C6C63E /* QuestionList.swift in Sources */,
 				8444FB682B2F5ED5000A1EA4 /* QuestionPresentation.swift in Sources */,
+				8444FB752B2F99A7000A1EA4 /* TestError.swift in Sources */,
 				8496F0B12B2CEE3700EAB8C3 /* BaseRouter.swift in Sources */,
 				8444FB632B2EF48F000A1EA4 /* UIButton+Extensions.swift in Sources */,
 				8496F0762B2CE81E00EAB8C3 /* AppDelegate.swift in Sources */,
@@ -473,7 +496,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8496F08D2B2CE81F00EAB8C3 /* QuestionAppTests.swift in Sources */,
+				8444FB792B2F9E95000A1EA4 /* QuestionPageViewModelTests.swift in Sources */,
+				8496F08D2B2CE81F00EAB8C3 /* HomePageViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +665,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -668,6 +693,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

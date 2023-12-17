@@ -19,7 +19,7 @@ protocol HomePageViewModelProtocol: HomePageViewModelDataSource, HomePageViewMod
 final class HomePageViewModel: BaseViewModel<HomePageRouter>, HomePageViewModelProtocol {
     
     private var networkService: NetworkServiceProtocol
-    private var questions: QuestionList? = nil
+    var questions: QuestionList? = nil
     
     init(router: HomePageRouter, networkService: NetworkServiceProtocol) {
         self.networkService = networkService
