@@ -15,10 +15,12 @@
                 <outlet property="answerAndPointNumberInfoTitle" destination="tG7-aE-Njv" id="X1L-pu-red"/>
                 <outlet property="firstOptionButton" destination="kEb-Ys-064" id="Afz-KV-fRs"/>
                 <outlet property="fourthOptionButton" destination="taQ-9g-51q" id="YO4-P1-q0H"/>
+                <outlet property="homePageButton" destination="2Ij-Nb-sU1" id="XKe-34-4q7"/>
                 <outlet property="questionBodyLabel" destination="wSk-i0-pPp" id="t9V-iV-7uB"/>
                 <outlet property="questionImageContainerView" destination="qw5-BE-UCw" id="nyW-cm-Roy"/>
                 <outlet property="questionImageView" destination="fl8-up-fx9" id="0x5-5c-1zM"/>
                 <outlet property="questionPointLabel" destination="S87-gv-oCw" id="58g-XO-EdK"/>
+                <outlet property="questionStackView" destination="Ma0-H5-6n3" id="eKk-In-Eko"/>
                 <outlet property="secondOptionButton" destination="CzA-y0-Jl1" id="qiV-9e-Vsl"/>
                 <outlet property="thirdOptionButton" destination="fGw-hI-KiX" id="Oz2-kl-iOv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dnj-hV-i2A"/>
@@ -162,6 +164,18 @@
                         <constraint firstItem="dQm-c8-bJK" firstAttribute="leading" secondItem="Ma0-H5-6n3" secondAttribute="leading" constant="20" id="jLv-29-eBC"/>
                     </constraints>
                 </stackView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ij-Nb-sU1">
+                    <rect key="frame" x="30" y="413.66666666666669" width="333" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="KwA-3W-akI"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="homePageButtonAction:" destination="-1" eventType="touchUpInside" id="yK4-lM-iqH"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -169,7 +183,10 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ma0-H5-6n3" secondAttribute="trailing" id="7Pl-Ga-c6j"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ma0-H5-6n3" secondAttribute="bottom" id="9BF-z1-qEi"/>
                 <constraint firstItem="Ma0-H5-6n3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="E0k-fu-h5a"/>
+                <constraint firstItem="2Ij-Nb-sU1" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="bf2-Qp-LVy"/>
+                <constraint firstItem="2Ij-Nb-sU1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="eRZ-dz-hrb"/>
                 <constraint firstItem="Ma0-H5-6n3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mWM-Xa-ddw"/>
+                <constraint firstItem="2Ij-Nb-sU1" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="nNm-A2-sPI"/>
             </constraints>
             <point key="canvasLocation" x="-51" y="21"/>
         </view>

@@ -8,14 +8,14 @@
 import Foundation
 
 protocol QuestionPageRoute {
-    func pushQuestionPage(networkService: NetworkServiceProtocol, questions: QuestionList)
+    func pushQuestionPage(networkService: NetworkServiceProtocol, questions: QuestionPresentation)
 }
 
 extension QuestionPageRoute where Self: RouterProtocol {
     
-    func pushQuestionPage(networkService: NetworkServiceProtocol, questions: QuestionList) {
+    func pushQuestionPage(networkService: NetworkServiceProtocol, questions: QuestionPresentation) {
         let router = QuestionPageRouter()
-        let viewModel = QuestionPageViewModel(router: router, networkService: networkService, questions: questions)
+        let viewModel = QuestionPageViewModel(router: router, networkService: networkService, questionPresentation: questions)
         let viewController = QuestionPageViewController(viewModel: viewModel, nibName: "QuestionPageViewController")
         let transition = PushTransition()
         router.viewController = viewController

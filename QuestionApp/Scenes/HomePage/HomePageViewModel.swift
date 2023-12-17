@@ -34,7 +34,7 @@ final class HomePageViewModel: BaseViewModel<HomePageRouter>, HomePageViewModelP
                 questions = try await networkService.request(endpoint: .getQuestions)
                 guard let questions = questions else { return }
                 DispatchQueue.main.async {
-                       self.pushQuestionPage(questions: questions)
+                       self.pushQuestionPage(questions: QuestionPresentation(from: questions))
                    }
             } catch {
                 print("Couldn't Question Response")
@@ -42,7 +42,7 @@ final class HomePageViewModel: BaseViewModel<HomePageRouter>, HomePageViewModelP
         }
     }
     
-    private func pushQuestionPage(questions: QuestionList) {
+    private func pushQuestionPage(questions: QuestionPresentation) {
         router.pushQuestionPage(networkService: networkService, questions: questions)
 
     }

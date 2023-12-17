@@ -29,10 +29,12 @@ extension UIButton {
         if isProgress {
             activityIndicator.startAnimating()
             self.setTitle("", for: .normal)
+            self.isEnabled = false
         } else {
             activityIndicator.stopAnimating()
             activityIndicator.removeFromSuperview()
             self.setTitle(title, for: .normal)
+            self.isEnabled = true
         }
     }
 }
