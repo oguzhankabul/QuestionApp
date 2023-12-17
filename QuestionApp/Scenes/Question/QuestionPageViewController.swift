@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
         
@@ -57,18 +58,19 @@ class QuestionPageViewController<V: QuestionPageViewModel>: UIViewController {
         guard let quesiton = quesiton else {
             questionStackView.isHidden = true
             homePageButton.isHidden = false
-            homePageButton.setTitle( "Toplam \(totalScore) puan. Ana sayfaya dön.", for: .normal)
+            homePageButton.setTitle( "Toplam \(totalScore) puan.\nAna sayfaya dön.", for: .normal)
             return
         }
         
         refreshOptions()
         questionPointLabel.text = "\(quesiton.score) puan"
-        if let image = quesiton.questionImageURL {
+        if let imageUrlString = quesiton.questionImageURL, imageUrlString != "null", !imageUrlString.isEmpty, let imageUrl = URL(string: imageUrlString) {
             questionImageContainerView.isHidden = false
+            questionImageView.kf.setImage(with: imageUrl)
         } else {
             questionImageContainerView.isHidden = true
         }
-        answerAndPointNumberInfoTitle.text = "\(totalScore) puan"
+        answerAndPointNumberInfoTitle.text = "Soru \(quesiton.questionNumber)/\(viewModel.questions.count) Total Puanınız: \(totalScore)"
         questionBodyLabel.text = quesiton.questionText
     }
     
