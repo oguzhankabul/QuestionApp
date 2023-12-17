@@ -13,7 +13,11 @@ protocol QuestionPageViewModelDataSource {
     var questions: [QuestionDetail] { get }
 }
 
-protocol QuestionPageViewModelEventSource { }
+protocol QuestionPageViewModelEventSource {
+    func getShuffledAnswers() -> [String]
+    func answerQuestionAction(answer: String?)
+    func goToNextQuestion()
+}
 
 protocol QuestionPageViewModelProtocol: QuestionPageViewModelDataSource, QuestionPageViewModelEventSource { }
 

@@ -30,7 +30,8 @@ extension PushTransition: BaseTransitionProtocol {
     }
     
     func close(_ viewController: UIViewController) {
-        self.viewController?.navigationController?.popViewController(animated: isAnimated)
+        let navigationController = app.route.window!.rootViewController as! UINavigationController
+        navigationController.popViewController(animated: isAnimated)
     }
 }
 

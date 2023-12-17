@@ -20,7 +20,7 @@ final class AppRoute {
         let networkService = networkService
         let viewModel = HomePageViewModel(router: router, networkService: networkService)
         let viewController = HomePageController(viewModel: viewModel, nibName: "HomePageViewController")
-        let navgationController = UINavigationController(rootViewController: viewController)
+        let navgationController = BaseNavigationController(rootViewController: viewController)
 
         if isFirstStart {
             self.window?.rootViewController = navgationController

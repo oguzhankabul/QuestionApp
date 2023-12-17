@@ -7,12 +7,10 @@
 
 import Foundation
 
-protocol HomePageViewModelDataSource {
-    
-}
+protocol HomePageViewModelDataSource { }
 
 protocol HomePageViewModelEventSource {
-    
+    func getQuizList()
 }
 
 protocol HomePageViewModelProtocol: HomePageViewModelDataSource, HomePageViewModelEventSource { }
